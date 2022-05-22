@@ -1,0 +1,53 @@
+{
+  "paths": {
+    "hostname.com/api/": { // example: http://127.0.0.1:8000/api/
+      "post": {
+        "summary": "produce product",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful",
+          },
+          "400": {
+            "description": "Bad request",
+          }
+        }
+      }
+    },
+  },
+  //  setup your own host and send this example to "lostname.com/api/"  
+  "example":{  
+      "products": [{
+          "product_name": "Рубашка", // type string
+          "product_qty": 30           // type intager
+      },
+      {
+          "product_name": "Брюки",
+          "product_qty": 20
+      }
+      ]
+    
+  },
+    "ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the error",
+          "example": "Title of the error"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description on about the error's nature",
+          "example": "Brief description about the error's nature"
+        }
+      }
+    }
+  }
+}
